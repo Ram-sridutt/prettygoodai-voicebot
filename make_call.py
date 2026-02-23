@@ -14,7 +14,7 @@ print("TOKEN =", TWILIO_AUTH_TOKEN)
 print("CALLER =", TWILIO_CALLER_NUMBER)
 print("TEST_NUMBER =", TEST_NUMBER)
 
-TWIML_URL = "https://bairnish-unadministrable-aubree.ngrok-free.dev/voice"
+TWIML_URL = "url"
 
 client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
 
