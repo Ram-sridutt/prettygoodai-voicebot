@@ -4,19 +4,17 @@ from twilio.twiml.voice_response import VoiceResponse, Gather
 from dotenv import load_dotenv
 from openai import OpenAI
 
-# Load environment variables
+# Environment variables
 load_dotenv()
 
 app = Flask(__name__)
 
-# Load OpenAI key from .env
+# OpenAI key from .env
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=OPENAI_API_KEY)
 
-# Ensure transcripts folder exists
 os.makedirs("transcripts", exist_ok=True)
 
-# CONFIG: Set your scenario here
 SCENARIO_TEXT = ("Paste the scenario here.")
 
 def log_turn(call_sid: str, speaker: str, text: str):
@@ -36,17 +34,17 @@ def voice():
 
     resp = VoiceResponse()
 
-    # Listen first — do NOT speak yet
+    # Listen first
     gather = Gather(
         input="speech",
         action="/handle_agent?turn=1",
         method="POST",
         timeout=5
     )
-    gather.say("")  # silent gather
+    gather.say("")
     resp.append(gather)
 
-    # Fallback if no speech detected
+    # if no speech detected
     resp.say("Sorry, I didn't hear anything. Goodbye.")
     resp.hangup()
 
@@ -71,7 +69,7 @@ def handle_agent():
         resp.hangup()
         return Response(str(resp), mimetype="text/xml")
 
-    # Log the agent's turn
+    # Log agent's turn
     log_turn(call_sid, "AGENT", agent_speech)
 
     # Inject the scenario
@@ -79,7 +77,6 @@ def handle_agent():
         patient_reply = SCENARIO_TEXT
 
     else:
-        # SUBSEQUENT TURNS: Use OpenAI
         completion = client.chat.completions.create(
             model="gpt-4o-mini",
             messages=[
@@ -100,10 +97,8 @@ def handle_agent():
 
         patient_reply = completion.choices[0].message.content.strip()
 
-    # Log the patient's reply
     log_turn(call_sid, "PATIENT", patient_reply)
 
-    # Speak the reply and listen again
     gather = Gather(
         input="speech",
         action=f"/handle_agent?turn={turn + 1}",
@@ -113,7 +108,7 @@ def handle_agent():
     gather.say(patient_reply)
     resp.append(gather)
 
-    # Fallback if no speech detected
+    # if no speech detected
     resp.say("Thanks, that's all I needed. Goodbye.")
     resp.hangup()
 
