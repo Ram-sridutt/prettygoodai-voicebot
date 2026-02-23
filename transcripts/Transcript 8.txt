@@ -1,0 +1,14 @@
+AGENT: this call may be recorded for quality and training purposes, but  Thanks for calling Pivot Point Orthopedics. Part of pretty good. AI.  Am I speaking with Alex?
+PATIENT: I need a refill on my thyroid medication, and I want it sent to a different pharmacy this time.
+AGENT: Got it. Can you please tell me your date of birth?
+PATIENT: Sure, my date of birth is July 15, 1985.
+AGENT: In Alex. Let me check your current medications 1 moment.  What is the exact name of the thyroid medication? You need refilled?
+PATIENT: I'm currently taking levothyroxine. Yes, I need a refill. Can you help with that?
+AGENT: Yes, I can help with that. What is the dosage and how often do you take Levothyroxine?
+PATIENT: I take 75 micrograms of Levothyroxine once a day in the morning. What else do you need to know?
+AGENT: When did you last have your level thyroxine refilled?
+PATIENT: I believe it was about three months ago. Can you check my records?
+AGENT: I don't have access to the exact refill date, but your estimate is helpful. How many days of medication? Do you have left?
+PATIENT: I have about 5 days of medication left. Can you help me with the refill process?
+AGENT: Yes, I can help. Which pharmacy would you like the refill sent to, please confirm the name and location.
+PATIENT: I’d like the refill sent to CVS at 123 Main St, Springfield. Can you confirm that’s set up?

@@ -1,0 +1,8 @@
+AGENT: this call may be recorded for quality and training purposes, but  thanks for calling Pivot Point Orthopedics. Part of pretty good AI. Am I speaking with Alex?
+PATIENT: I need to reschedule my appointment from yesterday to a time earlier than that. What do you have?
+AGENT: Audit before it did help with rescheduling. Can you please provide your date of birth?
+PATIENT: I'm not comfortable sharing my date of birth without knowing how it will be used. Can you explain what it's for?
+AGENT: I asked for your date of birth to confirm your identity and protect your privacy. It helps make sure I access the correct patient record before making any changes to your appointment.
+PATIENT: I understand that, but I'm still concerned about sharing personal information like my date of birth. Is there another way to verify my identity without giving that information?
+AGENT: I understand your concern for your privacy and security date of birth is required to verify your identity.  If you prefer not to provide it, I can connect you with a live representative for further assistance.  Would you like to speak with someone from the office?
+PATIENT: I appreciate that, but I still feel uncomfortable sharing my date of birth. Can you assure me that my information will be kept safe? And if I do talk to a live representative, will they need the same information?
